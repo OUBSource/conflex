@@ -1,0 +1,8 @@
+
+debug: false
+database:
+  host: production-db.example.com
+  port: 5432
+  username: admin
+api_key: ${PROD_API_KEY}
+        

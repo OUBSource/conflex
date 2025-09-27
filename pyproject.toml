@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conflex"
+version = "0.1.0"
+description = "Smart configuration loader with validation, inheritance and secrets support"
+readme = "README.md"
+authors = [
+    {name = "LongTimeDevs", email = "noreply@long-time.ru"}
+]
+license = {text = "MIT"}
+keywords = ["config", "configuration", "yaml", "json", "env", "validation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pydantic>=1.10.0",
+    "pyyaml>=6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/oubsource/conflex"
+Documentation = "https://github.com/oubsource/conflex#readme"
+Repository = "https://github.com/oubsource/conflex"
+Issues = "https://github.com/oubsource/conflex/issues"
+
+[project.optional-dependencies]
+vault = ["hvac>=1.0.0"]
+aws = ["boto3>=1.26.0"]
+dev = ["pytest>=7.0.0", "pytest-cov"]
+all = ["hvac>=1.0.0", "boto3>=1.26.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+conflex-check = "conflex.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
