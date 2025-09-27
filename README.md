@@ -13,5 +13,6 @@ Smart configuration loader for Python with validation, inheritance and secrets s
 
 ## Installation
 
-```bash
-pip install conflex
+```python
+
+pip install .
